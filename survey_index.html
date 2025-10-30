@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问卷星球 - 参与问卷赚取积分</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <h1>问卷星球</h1>
+            </div>
+            <div class="nav-links">
+                <a href="#about">关于我们</a>
+                <a href="#features">平台特色</a>
+                <a href="#faq">常见问题</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="loginBtn" class="btn btn-outline">登录</button>
+                <button id="registerBtn" class="btn btn-primary">免费注册</button>
+            </div>
+            <div class="mobile-menu-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动端菜单 -->
+    <div class="mobile-menu">
+        <div class="mobile-links">
+            <a href="#about">关于我们</a>
+            <a href="#features">平台特色</a>
+            <a href="#faq">常见问题</a>
+            <button id="mobileLoginBtn" class="btn btn-outline">登录</button>
+            <button id="mobileRegisterBtn" class="btn btn-primary">免费注册</button>
+        </div>
+    </div>
+
+    <!-- 英雄区域 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>参与问卷，赚取积分奖励</h2>
+                <p>完成调查问卷，轻松获取积分兑换丰富礼品！您的意见对我们至关重要，我们也将为您的时间提供价值回报。</p>
+                <div class="hero-buttons">
+                    <button id="heroRegisterBtn" class="btn btn-primary btn-large">立即开始</button>
+                    <a href="#how-it-works" class="btn btn-outline btn-large">了解更多</a>
+                </div>
+                <div class="trust-badges">
+                    <span>已有超过 <strong>10,000+</strong> 用户参与</span>
+                    <div class="rating">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="#FFD700" stroke="#FFD700" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        <span>4.9/5</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://picsum.photos/id/3/600/400" alt="参与问卷赚取积分" class="hero-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 如何工作 -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">如何赚取积分</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>免费注册账号</h3>
+                    <p>创建您的个人账号，完善基本信息</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>浏览可用问卷</h3>
+                    <p>查看适合您的调查问卷，了解积分奖励</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>完成问卷</h3>
+                    <p>认真填写问卷内容，提供真实有效的反馈</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>赚取积分</h3>
+                    <p>问卷完成后，积分自动添加到您的账户</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">5</div>
+                    <h3>兑换奖励</h3>
+                    <p>累积足够积分后，兑换您喜爱的礼品</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 平台特色 -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">平台特色</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>高价值问卷</h3>
+                    <p>定期更新高积分问卷，让您的时间更有价值</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 16v-4"></path>
+                            <path d="M12 8h.01"></path>
+                        </svg>
+                    </div>
+                    <h3>灵活参与</h3>
+                    <p>随时随地参与问卷，根据自己的时间安排</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                    </div>
+                    <h3>安全可靠</h3>
+                    <p>严格保护您的个人信息，确保数据安全</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path>
+                            <rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect>
+                        </svg>
+                    </div>
+                    <h3>多种奖励</h3>
+                    <p>丰富的兑换选项，包括礼品卡、优惠券等</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                    </div>
+                    <h3>快速到账</h3>
+                    <p>问卷完成后，积分立即到账，无需等待</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                        </svg>
+                    </div>
+                    <h3>优质客服</h3>
+                    <p>专业客服团队，为您提供及时的帮助和支持</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我们 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <h2 class="section-title">关于问卷星球</h2>
+                <p>问卷星球是一个连接用户与市场研究的平台，我们致力于为用户提供有价值的调查问卷，并为您的时间和意见提供积分奖励。</p>
+                <p>通过参与我们的调查问卷，您不仅可以获得积分兑换丰富礼品，还能影响产品和服务的改进，让您的声音被听到。</p>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">10,000+</div>
+                        <div class="stat-label">活跃用户</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">完成问卷</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">500,000+</div>
+                        <div class="stat-label">发放积分</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <img src="https://picsum.photos/id/20/600/400" alt="关于问卷星球" class="about-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">常见问题</h2>
+            <div class="faq-items">
+                <div class="faq-item">
+                    <div class="faq-question">如何注册账号？</div>
+                    <div class="faq-answer">点击网站右上角的"免费注册"按钮，填写基本信息即可完成注册。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">积分如何计算？</div>
+                    <div class="faq-answer">不同问卷的积分奖励不同，一般根据问卷长度和复杂程度设定，完成后积分自动发放。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">积分可以兑换什么？</div>
+                    <div class="faq-answer">积分可以兑换各种礼品卡、优惠券以及实物奖品，具体可在积分商城查看。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">如何保证我的信息安全？</div>
+                    <div class="faq-answer">我们采用严格的加密技术保护您的个人信息，绝不会将您的数据分享给第三方。</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">问卷完成后多久能获得积分？</div>
+                    <div class="faq-answer">一般情况下，问卷提交成功后积分会立即到账，特殊情况可能需要人工审核，最长不超过48小时。</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 注册引导 -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2>准备好开始赚取积分了吗？</h2>
+                <p>立即注册，参与高价值问卷，兑换丰富奖励！</p>
+                <button id="ctaRegisterBtn" class="btn btn-primary btn-large">免费注册</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div class="footer-col">
+                    <h3>关于我们</h3>
+                    <a href="#about">公司介绍</a>
+                    <a href="#">联系方式</a>
+                    <a href="#">招贤纳士</a>
+                </div>
+                <div class="footer-col">
+                    <h3>帮助中心</h3>
+                    <a href="#faq">常见问题</a>
+                    <a href="#">使用指南</a>
+                    <a href="privacy-policy.html">隐私政策</a>
+                </div>
+                <div class="footer-col">
+                    <h3>商务合作</h3>
+                    <a href="#">企业调研</a>
+                    <a href="#">广告投放</a>
+                    <a href="#">API合作</a>
+                </div>
+                <div class="footer-col">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 问卷星球. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 登录弹窗 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">邮箱</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-options">
+                    <label><input type="checkbox"> 记住我</label>
+                    <a href="#">忘记密码？</a>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">登录</button>
+                <div class="auth-switch">
+                    还没有账号？ <button type="button" class="text-link" id="switchToRegister">立即注册</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 注册弹窗 -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>免费注册</h2>
+            <form id="registerForm" class="auth-form">
+                <div class="form-group">
+                    <label for="registerName">姓名</label>
+                    <input type="text" id="registerName" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">邮箱</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">密码</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerConfirmPassword">确认密码</label>
+                    <input type="password" id="registerConfirmPassword" required>
+                </div>
+                <div class="form-options">
+                    <label><input type="checkbox" required> 我已阅读并同意 <a href="terms.html" target="_blank">用户协议</a> 和 <a href="privacy-policy.html" target="_blank">隐私政策</a></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">注册</button>
+                <div class="auth-switch">
+                    已有账号？ <button type="button" class="text-link" id="switchToLogin">立即登录</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

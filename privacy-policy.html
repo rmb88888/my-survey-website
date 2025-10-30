@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>隐私政策 - 问卷星球</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-dark: #2563eb;
+            --secondary-color: #475569;
+            --light-bg: #f8fafc;
+            --border-color: #e2e8f0;
+            --text-color: #1e293b;
+            --text-secondary: #64748b;
+            --white: #ffffff;
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--light-bg);
+        }
+        
+        .header {
+            background-color: var(--white);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .privacy-container {
+            padding: 3rem 0;
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--white);
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 0.5rem;
+            box-shadow: var(--shadow);
+        }
+        
+        .privacy-header {
+            padding: 2rem 1.5rem 1.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .privacy-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+        }
+        
+        .privacy-date {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+        
+        .privacy-content {
+            padding: 2rem 1.5rem;
+        }
+        
+        .privacy-section {
+            margin-bottom: 2.5rem;
+        }
+        
+        .privacy-section h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+        
+        .privacy-section h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin: 1.5rem 0 1rem;
+            color: var(--text-color);
+        }
+        
+        .privacy-section p {
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
+        }
+        
+        .privacy-section ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+        }
+        
+        .privacy-section li {
+            margin-bottom: 0.75rem;
+            color: var(--text-secondary);
+        }
+        
+        .privacy-section li strong {
+            color: var(--text-color);
+        }
+        
+        .footer {
+            background-color: var(--white);
+            border-top: 1px solid var(--border-color);
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .footer-copyright {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 2rem;
+            padding: 0.75rem 1.5rem;
+            background-color: var(--primary-color);
+            color: var(--white);
+            text-decoration: none;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: background-color 0.2s;
+        }
+        
+        .back-button:hover {
+            background-color: var(--primary-dark);
+        }
+        
+        @media (max-width: 768px) {
+            .privacy-title {
+                font-size: 1.75rem;
+            }
+            
+            .privacy-container {
+                margin: 1rem;
+                padding: 1.5rem 0;
+            }
+            
+            .privacy-header,
+            .privacy-content {
+                padding: 1.5rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <a href="survey_index.html" class="logo">问卷星球</a>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="privacy-container">
+            <div class="privacy-header">
+                <h1 class="privacy-title">隐私政策</h1>
+                <p class="privacy-date">最后更新日期：2024年1月1日</p>
+            </div>
+
+            <div class="privacy-content">
+                <div class="privacy-section">
+                    <p>欢迎使用问卷星球服务。我们非常重视您的隐私保护，并致力于保护您提供给我们的个人信息。本隐私政策旨在帮助您了解我们如何收集、使用、存储和保护您的个人信息，以及您可以如何访问、更新、控制和保护您的个人信息。</p>
+                    <p>请您在使用我们的服务前，仔细阅读并了解本隐私政策。如果您不同意本隐私政策的任何内容，您应立即停止使用我们的服务。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>1. 我们收集的信息</h2>
+                    <p>当您使用我们的服务时，我们可能会收集以下类型的信息：</p>
+                    
+                    <h3>1.1 您提供的信息</h3>
+                    <ul>
+                        <li><strong>注册信息：</strong>当您注册账户时，我们会收集您提供的信息，如姓名、电子邮件地址、密码等。</li>
+                        <li><strong>调查回答：</strong>您在参与调查时提供的所有回答和反馈。</li>
+                        <li><strong>账户信息：</strong>您在账户设置中提供的其他信息，如联系方式、地址等。</li>
+                        <li><strong>沟通信息：</strong>您与我们的客户支持团队沟通时提供的信息。</li>
+                    </ul>
+                    
+                    <h3>1.2 自动收集的信息</h3>
+                    <ul>
+                        <li><strong>使用数据：</strong>关于您如何使用我们服务的信息，如您访问的页面、点击的链接、参与的调查等。</li>
+                        <li><strong>设备信息：</strong>有关您使用的设备的信息，如设备型号、操作系统、浏览器类型、IP地址等。</li>
+                        <li><strong>Cookie和类似技术：</strong>我们使用Cookie和类似技术来收集和存储有关您的信息。有关更多详情，请参阅我们的Cookie政策。</li>
+                        <li><strong>位置信息：</strong>在您同意的情况下，我们可能会收集您的位置信息，以提供更加个性化的服务。</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>2. 我们如何使用您的信息</h2>
+                    <p>我们使用收集到的信息来：</p>
+                    <ul>
+                        <li>提供、维护和改进我们的服务</li>
+                        <li>处理您的调查参与和积分奖励</li>
+                        <li>发送有关我们服务的更新和通知</li>
+                        <li>回应您的询问和请求</li>
+                        <li>个性化您的体验，提供定制的内容和推荐</li>
+                        <li>检测、预防和解决欺诈、安全和技术问题</li>
+                        <li>遵守法律义务和保护我们的权利</li>
+                        <li>进行市场研究和分析，以改进我们的服务</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>3. 我们如何分享您的信息</h2>
+                    <p>我们重视您的隐私，并只会在以下情况下分享您的信息：</p>
+                    <ul>
+                        <li><strong>经您同意：</strong>在获得您的明确同意后，我们可能会与第三方分享您的信息。</li>
+                        <li><strong>服务提供商：</strong>我们可能会与帮助我们提供服务的第三方服务提供商分享信息，如支付处理商、数据分析服务提供商等。这些服务提供商只能在提供服务的必要范围内使用您的信息。</li>
+                        <li><strong>市场研究客户：</strong>我们可能会与我们的市场研究客户分享调查数据，但这些数据将是匿名的或去标识化的，不会包含可以识别您个人身份的信息。</li>
+                        <li><strong>法律要求：</strong>在法律要求的情况下，我们可能会披露您的信息以遵守法律程序、回应政府请求或保护我们的权利、财产或安全。</li>
+                        <li><strong>业务转让：</strong>如果我们发生并购、资产转让或类似交易，我们可能会将您的信息转让给相关方。</li>
+                    </ul>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>4. 数据安全</h2>
+                    <p>我们采取合理的安全措施来保护您的个人信息免受未授权访问、披露、使用、修改或破坏。这些措施包括：</p>
+                    <ul>
+                        <li>使用加密技术保护数据传输和存储</li>
+                        <li>实施访问控制措施，限制对个人信息的访问</li>
+                        <li>定期进行安全评估和审计</li>
+                        <li>员工培训和安全意识计划</li>
+                    </ul>
+                    <p>尽管我们采取了合理的安全措施，但请您注意，互联网上的数据传输永远不能完全保证安全。因此，我们无法保证您传输给我们的信息的安全性。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>5. 数据保留</h2>
+                    <p>我们会在实现本隐私政策所述目的所需的时间内保留您的个人信息，除非法律要求或允许更长的保留期限。我们保留数据的具体期限取决于数据的类型、收集数据的目的以及我们需要遵守的法律义务。</p>
+                    <p>当您的个人信息不再需要用于我们的服务提供和业务运营时，我们将采取合理措施删除或匿名化这些信息。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>6. 您的权利</h2>
+                    <p>根据适用的法律法规，您可能享有以下权利：</p>
+                    <ul>
+                        <li><strong>访问权：</strong>您有权访问我们持有的关于您的个人信息。</li>
+                        <li><strong>更正权：</strong>如果您的个人信息不准确或不完整，您有权要求我们更正。</li>
+                        <li><strong>删除权：</strong>在某些情况下，您有权要求我们删除您的个人信息。</li>
+                        <li><strong>限制处理权：</strong>在某些情况下，您有权要求我们限制对您个人信息的处理。</li>
+                        <li><strong>数据可携权：</strong>在某些情况下，您有权以结构化、常用和机器可读的格式接收您提供给我们的个人信息。</li>
+                        <li><strong>反对权：</strong>在某些情况下，您有权反对我们对您个人信息的处理。</li>
+                        <li><strong>撤回同意权：</strong>如果我们基于您的同意处理您的个人信息，您有权随时撤回您的同意。</li>
+                    </ul>
+                    <p>要行使这些权利，请通过以下联系方式联系我们。我们将在合理的时间内回应您的请求。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>7. Cookie政策</h2>
+                    <p>我们使用Cookie和类似技术来提供、保护和改进我们的服务。Cookie是一种小型文本文件，当您访问网站时存储在您的设备上。</p>
+                    <p>我们使用的Cookie类型包括：</p>
+                    <ul>
+                        <li><strong>必要Cookie：</strong>这些Cookie对于网站的正常运行是必要的，无法在我们的系统中关闭。</li>
+                        <li><strong>性能Cookie：</strong>这些Cookie允许我们统计访问量和流量来源，以便我们衡量和改进网站的性能。</li>
+                        <li><strong>功能Cookie：</strong>这些Cookie使网站能够提供增强的功能和个性化内容。</li>
+                        <li><strong>广告Cookie：</strong>这些Cookie可能由我们的广告合作伙伴通过我们的网站设置。它们可能被这些公司用来构建您的兴趣档案，并向您展示相关广告。</li>
+                    </ul>
+                    <p>您可以通过浏览器设置拒绝或删除Cookie。但请注意，如果您这样做，您可能无法使用我们网站的所有功能。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>8. 未成年人保护</h2>
+                    <p>我们的服务不面向18岁以下的未成年人。我们不会故意收集18岁以下未成年人的个人信息。如果我们发现我们在未获得可验证的父母同意的情况下收集了未成年人的个人信息，我们将采取措施删除相关数据。</p>
+                    <p>如果您是父母或监护人，发现您的孩子未经您的同意使用了我们的服务，请联系我们，我们将尽快处理。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>9. 第三方网站和服务</h2>
+                    <p>我们的服务可能包含指向第三方网站和服务的链接。这些第三方有他们自己的隐私政策，我们不对他们的活动负责。我们鼓励您在访问这些第三方网站和使用他们的服务前，阅读他们的隐私政策。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>10. 隐私政策的更新</h2>
+                    <p>我们可能会不时更新本隐私政策。当我们进行重大变更时，我们将通过在网站上发布新的隐私政策文本并更新"最后更新日期"来通知您。我们鼓励您定期查看本隐私政策，以了解我们如何保护您的信息。</p>
+                    <p>您继续使用我们的服务将构成您对修改后隐私政策的接受。如果您不同意修改后的隐私政策，您应立即停止使用我们的服务。</p>
+                </div>
+
+                <div class="privacy-section">
+                    <h2>11. 联系我们</h2>
+                    <p>如果您对本隐私政策有任何问题或疑虑，或者希望行使您的数据主体权利，请通过以下方式联系我们：</p>
+                    <p><strong>电子邮件：</strong> privacy@wenjuanxingqiu.com</p>
+                    <p><strong>电话：</strong> 400-123-4567</p>
+                    <p><strong>地址：</strong> 北京市朝阳区建国路88号问卷星球大厦</p>
+                </div>
+
+                <div style="text-align: center;">
+                    <a href="survey_index.html" class="back-button">返回首页</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-links">
+                    <a href="survey_index.html">首页</a>
+                    <a href="terms.html">用户协议</a>
+                    <a href="privacy-policy.html">隐私政策</a>
+                    <a href="#">帮助中心</a>
+                    <a href="#">联系我们</a>
+                </div>
+                <p class="footer-copyright">© 2024 问卷星球. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

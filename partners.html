@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>问卷合作伙伴 - 问卷星球</title>
+    <style>
+        /* 基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+        
+        /* 页面容器 */
+        .simple-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 50px 20px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        /* 页面标题 */
+        .page-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+        
+        .page-description {
+            font-size: 1.1rem;
+            color: #a7aaad;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* 合作伙伴卡片样式 */
+        .partners-section {
+            flex: 1;
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            justify-items: center;
+        }
+        
+        .partner-card {
+            background-color: #25272b;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            border: 1px solid #383d43;
+            width: 100%;
+            max-width: 400px;
+        }
+        
+        .partner-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            border-color: #4361ee;
+        }
+        
+        .partner-logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background: linear-gradient(135deg, #4361ee, #3a0ca3);
+            display: inline-block;
+        }
+        
+
+        
+        .cpx-logo {
+                background: linear-gradient(135deg, #f72585, #7209b7);
+            }
+            
+            .cpx-btn {
+                background-color: #f72585;
+            }
+            
+            .cpx-btn:hover {
+                background-color: #7209b7;
+                transform: scale(1.05);
+            }
+        
+        .partner-name {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+        
+        .partner-description {
+            color: #a7aaad;
+            margin-bottom: 25px;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        
+        /* 按钮样式 */
+        .cpx-btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #ffffff;
+        }
+        
+        .cpx-btn {
+            background-color: #f72585;
+        }
+        
+        .cpx-btn:hover {
+            background-color: #7209b7;
+            transform: scale(1.05);
+        }
+        
+        /* 页脚样式 */
+        .simple-footer {
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 50px;
+            color: #a7aaad;
+            font-size: 0.9rem;
+            border-top: 1px solid #383d43;
+        }
+        
+        /* 弹窗样式 */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            overflow-y: auto;
+        }
+        
+        .modal-content {
+            background-color: #1c1e22;
+            border-radius: 12px;
+            padding: 25px;
+            border: 1px solid #383d43;
+            max-width: 1200px;
+            width: 95%;
+            max-height: 90vh;
+            margin: 20px auto;
+            position: relative;
+            animation: modalFade 0.3s ease;
+        }
+        
+        .rapidoreach-content {
+            background-color: #1c1e22;
+        }
+        
+        .cpx-content {
+            background-color: #1c1e22;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 25px;
+            color: #a7aaad;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        
+        .close-modal:hover {
+            color: #ffffff;
+        }
+        
+        .modal h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        
+        /* 弹窗动画 */
+        @keyframes modalFade {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* iframe容器 */
+        #cpx-iframe-wrapper {
+            width: 100%;
+            height: 2000px;
+            margin-top: 20px;
+            border: none;
+            overflow: hidden;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .page-title {
+                font-size: 2rem;
+            }
+            
+            .page-description {
+                font-size: 1rem;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .partner-card {
+                padding: 25px;
+            }
+            
+            .modal-content {
+                margin: 10px;
+                padding: 20px;
+            }
+            
+            #cpx-iframe-wrapper {
+                height: 1500px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="simple-container">
+        <!-- 页面标题 -->
+        <header class="page-header">
+            <h1 class="page-title">问卷合作伙伴</h1>
+            <p class="page-description">通过我们的合作伙伴平台完成调查问卷，获取丰厚奖励。无需登录，直接开始！</p>
+        </header>
+        
+        <!-- 合作伙伴卡片 -->
+        <section class="partners-section">
+            <h2 class="section-title">选择问卷平台</h2>
+            
+            <div class="partners-grid">
+                <!-- CPX RESEARCH 卡片 -->
+                <div class="partner-card cpx-card">
+                    <div class="partner-logo cpx-logo">CPX RESEARCH</div>
+                    <div class="partner-name">CPX新西兰</div>
+                    <div class="partner-description">完成高质量调查问卷，赚取丰厚奖励积分</div>
+                    <button id="openCPX" class="cpx-btn">立即使用</button>
+                </div>
+                
+                <!-- CPX RESEARCH 新卡片 -->
+                <div class="partner-card cpx-card">
+                    <div class="partner-logo cpx-logo">CPX RESEARCH</div>
+                    <div class="partner-name">CPX捷克</div>
+                    <div class="partner-description">完成高质量调查问卷，赚取丰厚奖励积分</div>
+                    <button id="openCPXNew" class="cpx-btn">立即使用</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- 页脚 -->
+        <footer class="simple-footer">
+            <p>&copy; 2024 问卷星球 - 您的在线调研奖励平台</p>
+        </footer>
+    </div>
+    
+    <!-- 不需要弹窗，已改为在新标签页中打开 -->
+    
+    <script>
+        // 完整的MD5哈希函数实现 - 确保与RapidoReach验证完全兼容
+        function hex_md5(str) {
+            // 常量定义
+            const C1 = 0xcc9e2d51;
+            const C2 = 0x1b873593;
+            const R1 = 15;
+            const R2 = 13;
+            const R3 = 16;
+            const R4 = 17;
+            
+            // 辅助函数
+            function safe_add(x, y) {
+                const lsw = (x & 0xffff) + (y & 0xffff);
+                const msw = (x >> 16) + (y >> 16) + (lsw >> 16);
+                return (msw << 16) | (lsw & 0xffff);
+            }
+            
+            function bit_rol(num, cnt) {
+                return (num << cnt) | (num >>> (32 - cnt));
+            }
+            
+            function md5_cmn(q, a, b, x, s, t) {
+                return safe_add(bit_rol(safe_add(safe_add(a, q), safe_add(x, t)), s), b);
+            }
+            
+            function md5_ff(a, b, c, d, x, s, t) {
+                return md5_cmn((b & c) | ((~b) & d), a, b, x, s, t);
+            }
+            
+            function md5_gg(a, b, c, d, x, s, t) {
+                return md5_cmn((b & d) | (c & (~d)), a, b, x, s, t);
+            }
+            
+            function md5_hh(a, b, c, d, x, s, t) {
+                return md5_cmn(b ^ c ^ d, a, b, x, s, t);
+            }
+            
+            function md5_ii(a, b, c, d, x, s, t) {
+                return md5_cmn(c ^ (b | (~d)), a, b, x, s, t);
+            }
+            
+            // 初始化哈希值
+            let a = 0x67452301;
+            let b = 0xefcdab89;
+            let c = 0x98badcfe;
+            let d = 0x10325476;
+            
+            // 处理输入字符串
+            let str_len = str.length;
+            let word_array = [];
+            
+            for (let i = 0; i < str_len; i += 4) {
+                word_array.push(
+                    str.charCodeAt(i) + 
+                    (str.charCodeAt(i + 1) << 8) + 
+                    (str.charCodeAt(i + 2) << 16) + 
+                    (str.charCodeAt(i + 3) << 24)
+                );
+            }
+            
+            // 填充
+            let pad_len = 64 - ((str_len + 8) % 64);
+            let orig_len = str_len * 8;
+            
+            word_array.push(0x80); // 添加位'1'
+            for (let i = 1; i < pad_len; i++) {
+                word_array.push(0);
+            }
+            
+            // 添加原始长度的64位表示
+            word_array.push(orig_len & 0xFFFFFFFF);
+            word_array.push(orig_len >>> 32);
+            
+            // 主处理循环
+            for (let i = 0; i < word_array.length; i += 16) {
+                let x = word_array.slice(i, i + 16);
+                let olda = a;
+                let oldb = b;
+                let oldc = c;
+                let oldd = d;
+                
+                // 第一轮
+                a = md5_ff(a, b, c, d, x[0], R1, C1);
+                d = md5_ff(d, a, b, c, x[1], R2, C1);
+                c = md5_ff(c, d, a, b, x[2], R3, C1);
+                b = md5_ff(b, c, d, a, x[3], R4, C1);
+                a = md5_ff(a, b, c, d, x[4], R1, C1);
+                d = md5_ff(d, a, b, c, x[5], R2, C1);
+                c = md5_ff(c, d, a, b, x[6], R3, C1);
+                b = md5_ff(b, c, d, a, x[7], R4, C1);
+                a = md5_ff(a, b, c, d, x[8], R1, C1);
+                d = md5_ff(d, a, b, c, x[9], R2, C1);
+                c = md5_ff(c, d, a, b, x[10], R3, C1);
+                b = md5_ff(b, c, d, a, x[11], R4, C1);
+                a = md5_ff(a, b, c, d, x[12], R1, C1);
+                d = md5_ff(d, a, b, c, x[13], R2, C1);
+                c = md5_ff(c, d, a, b, x[14], R3, C1);
+                b = md5_ff(b, c, d, a, x[15], R4, C1);
+                
+                // 第二轮
+                a = md5_gg(a, b, c, d, x[1], R1, C2);
+                d = md5_gg(d, a, b, c, x[6], R2, C2);
+                c = md5_gg(c, d, a, b, x[11], R3, C2);
+                b = md5_gg(b, c, d, a, x[0], R4, C2);
+                a = md5_gg(a, b, c, d, x[5], R1, C2);
+                d = md5_gg(d, a, b, c, x[10], R2, C2);
+                c = md5_gg(c, d, a, b, x[15], R3, C2);
+                b = md5_gg(b, c, d, a, x[4], R4, C2);
+                a = md5_gg(a, b, c, d, x[9], R1, C2);
+                d = md5_gg(d, a, b, c, x[14], R2, C2);
+                c = md5_gg(c, d, a, b, x[3], R3, C2);
+                b = md5_gg(b, c, d, a, x[8], R4, C2);
+                a = md5_gg(a, b, c, d, x[13], R1, C2);
+                d = md5_gg(d, a, b, c, x[2], R2, C2);
+                c = md5_gg(c, d, a, b, x[7], R3, C2);
+                b = md5_gg(b, c, d, a, x[12], R4, C2);
+                
+                // 第三轮
+                a = md5_hh(a, b, c, d, x[5], R1, C1);
+                d = md5_hh(d, a, b, c, x[8], R2, C1);
+                c = md5_hh(c, d, a, b, x[11], R3, C1);
+                b = md5_hh(b, c, d, a, x[14], R4, C1);
+                a = md5_hh(a, b, c, d, x[1], R1, C1);
+                d = md5_hh(d, a, b, c, x[4], R2, C1);
+                c = md5_hh(c, d, a, b, x[7], R3, C1);
+                b = md5_hh(b, c, d, a, x[10], R4, C1);
+                a = md5_hh(a, b, c, d, x[13], R1, C1);
+                d = md5_hh(d, a, b, c, x[0], R2, C1);
+                c = md5_hh(c, d, a, b, x[3], R3, C1);
+                b = md5_hh(b, c, d, a, x[6], R4, C1);
+                a = md5_hh(a, b, c, d, x[9], R1, C1);
+                d = md5_hh(d, a, b, c, x[12], R2, C1);
+                c = md5_hh(c, d, a, b, x[15], R3, C1);
+                b = md5_hh(b, c, d, a, x[2], R4, C1);
+                
+                // 第四轮
+                a = md5_ii(a, b, c, d, x[0], R1, C2);
+                d = md5_ii(d, a, b, c, x[7], R2, C2);
+                c = md5_ii(c, d, a, b, x[14], R3, C2);
+                b = md5_ii(b, c, d, a, x[5], R4, C2);
+                a = md5_ii(a, b, c, d, x[12], R1, C2);
+                d = md5_ii(d, a, b, c, x[3], R2, C2);
+                c = md5_ii(c, d, a, b, x[10], R3, C2);
+                b = md5_ii(b, c, d, a, x[1], R4, C2);
+                a = md5_ii(a, b, c, d, x[8], R1, C2);
+                d = md5_ii(d, a, b, c, x[15], R2, C2);
+                c = md5_ii(c, d, a, b, x[6], R3, C2);
+                b = md5_ii(b, c, d, a, x[13], R4, C2);
+                a = md5_ii(a, b, c, d, x[4], R1, C2);
+                d = md5_ii(d, a, b, c, x[11], R2, C2);
+                c = md5_ii(c, d, a, b, x[2], R3, C2);
+                b = md5_ii(b, c, d, a, x[9], R4, C2);
+                
+                // 增加链接变量
+                a = safe_add(a, olda);
+                b = safe_add(b, oldb);
+                c = safe_add(c, oldc);
+                d = safe_add(d, oldd);
+            }
+            
+            // 转换为16进制字符串
+            function to_hex(num) {
+                let hex = '';
+                for (let i = 0; i < 4; i++) {
+                    let b = (num >> (i * 8)) & 0xff;
+                    hex += ((b < 16) ? '0' : '') + b.toString(16);
+                }
+                return hex;
+            }
+            
+            return (to_hex(a) + to_hex(b) + to_hex(c) + to_hex(d)).toLowerCase();
+        }
+        
+
+        
+        // 在新标签页中打开CPX RESEARCH
+        function openCPXInNewTab() {
+            console.log('在新标签页中打开CPX RESEARCH');
+            
+            // 生成新的用户ID
+            const uniqueUserId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            
+            // 生成随机用户名和邮箱
+            const username = 'session_user' + Date.now() + Math.floor(Math.random() * 1000);
+            const email = 'session_' + Date.now() + Math.floor(Math.random() * 10000) + '@example.com';
+            
+            // 安全哈希
+            const appSecureHash = 'OcLDaBSwsPmgdS6AWqGv3zwo8eOjtk3P';
+            const secureHash = hex_md5(uniqueUserId + '-' + appSecureHash);
+            
+            // CPX RESEARCH URL
+            const cpxUrl = 'https://offers.cpx-research.com/index.php?app_id=9860&ext_user_id=' + encodeURIComponent(uniqueUserId) + 
+                          '&secure_hash=' + encodeURIComponent(secureHash) + 
+                          '&username=' + encodeURIComponent(username) + 
+                          '&email=' + encodeURIComponent(email) + 
+                          '&subid_1=&subid_2=';
+            
+            // 在新标签页中打开
+            window.open(cpxUrl, '_blank');
+        }
+        
+        // 在新标签页中打开新的CPX RESEARCH (appid=29754)
+        function openCPXNewInNewTab() {
+            console.log('在新标签页中打开新的CPX RESEARCH');
+            
+            // 生成新的用户ID
+            const uniqueUserId = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            
+            // 生成随机用户名和邮箱
+            const username = 'session_user' + Date.now() + Math.floor(Math.random() * 1000);
+            const email = 'session_' + Date.now() + Math.floor(Math.random() * 10000) + '@example.com';
+            
+            // 安全哈希 - 使用相同的哈希算法但针对新的appid
+            const appSecureHash = 'OcLDaBSwsPmgdS6AWqGv3zwo8eOjtk3P';
+            const secureHash = hex_md5(uniqueUserId + '-' + appSecureHash);
+            
+            // CPX RESEARCH URL - 使用新的app_id=29754
+            const cpxUrl = 'https://offers.cpx-research.com/index.php?app_id=29754&ext_user_id=' + encodeURIComponent(uniqueUserId) + 
+                          '&secure_hash=' + encodeURIComponent(secureHash) + 
+                          '&username=' + encodeURIComponent(username) + 
+                          '&email=' + encodeURIComponent(email) + 
+                          '&subid_1=&subid_2=';
+            
+            // 在新标签页中打开
+            window.open(cpxUrl, '_blank');
+        }
+        
+        // 初始化事件绑定
+        function initPage() {
+            console.log('开始初始化页面');
+            
+            // 获取按钮元素
+            const openCpxBtn = document.getElementById('openCPX');
+            const openCpxNewBtn = document.getElementById('openCPXNew');
+            
+            console.log('按钮元素检查结果:', {
+                openCpxBtn: !!openCpxBtn,
+                openCpxNewBtn: !!openCpxNewBtn
+            });
+            
+            // 绑定点击事件
+            if (openCpxBtn) {
+                openCpxBtn.addEventListener('click', openCPXInNewTab);
+            }
+            
+            if (openCpxNewBtn) {
+                openCpxNewBtn.addEventListener('click', openCPXNewInNewTab);
+            }
+            
+            console.log('页面初始化完成');
+        }
+        
+        // 页面加载完成后初始化 - 使用单一事件监听器避免重复绑定
+        window.addEventListener('DOMContentLoaded', initPage);
+        
+        // 备用初始化 - 确保即使DOMContentLoaded有问题也能初始化
+        window.addEventListener('load', function() {
+            const openCpxBtn = document.getElementById('openCPX');
+            const openCpxNewBtn = document.getElementById('openCPXNew');
+            if ((!openCpxBtn || openCpxBtn.onclick === null) || 
+                (!openCpxNewBtn || openCpxNewBtn.onclick === null)) {
+                console.warn('使用window.load备用初始化');
+                initPage();
+            }
+        });
+    </script>
+</body>
+</html>
